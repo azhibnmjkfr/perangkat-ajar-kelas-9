@@ -81,7 +81,7 @@
     .item-meta { display: flex; gap: 16px; font-size: 0.88rem; color: var(--text-light); flex-wrap: wrap; }
     .item-meta span { display: flex; align-items: center; gap: 6px; background: var(--bg); padding: 4px 10px; border-radius: 20px; font-weight: 500; }
     .item-meta i { color: var(--accent); font-size: 0.8rem; }
-    .item-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .item-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 
     /* Buttons */
     .btn { padding: 12px 18px; border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 600; cursor: pointer; 
@@ -92,8 +92,6 @@
     .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(234, 88, 12, 0.3); }
     .btn-ghost { background: transparent; color: var(--text-light); border-color: var(--border); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-    .btn-download { background: var(--success); color: white; border-color: var(--success); }
-    .btn-download:hover { background: var(--success-dark); border-color: var(--success-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
     .highlight { background: #fed7aa; color: #c2410c; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
 
     /* Explore Hint */
@@ -108,10 +106,16 @@
     .empty p { font-size: 1.2rem; max-width: 520px; margin: 0 auto; font-weight: 500; }
 
     /* Toast */
-    .toast { position: fixed; top: 24px; right: 24px; padding: 16px 20px; background: var(--success); color: white; 
-             border-radius: var(--radius-sm); box-shadow: var(--shadow-hover); transform: translateX(400px); 
-             transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 10000; display: flex; align-items: center; gap: 8px; font-weight: 600; }
-    .toast.show { transform: translateX(0); }
+    .toast {
+      position: fixed; top: 24px; right: 24px; padding: 16px 20px; background: var(--success); color: white;
+      border-radius: var(--radius-sm); box-shadow: var(--shadow-hover);
+      transform: translateX(400px); opacity: 0; pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 10000; display: flex; align-items: center; gap: 8px; font-weight: 600;
+    }
+    .toast.show {
+      transform: translateX(0); opacity: 1; pointer-events: auto;
+    }
 
     /* Modal */
     .modal { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(20px); 
@@ -124,18 +128,6 @@
     .modal-title { font-weight: 600; font-size: 1.25rem; color: var(--text); }
     .modal-meta { color: var(--text-light); font-size: 0.95rem; margin-top: 4px; }
     iframe { flex: 1; border: 0; background: white; }
-
-    /* WhatsApp Float */
-    .wa-float { position: fixed; bottom: 28px; right: 28px; width: 64px; height: 64px; background: linear-gradient(135deg, #25d366, #128c7e); 
-                color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.9rem; 
-                box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition); text-decoration: none; 
-                border: 3px solid rgba(255, 255, 255, 0.3); }
-    .wa-float::before { content: ''; position: absolute; inset: -8px; border-radius: 50%; background: rgba(37, 211, 102, 0.3); 
-                        animation: pulse-glow 2s infinite; z-index: -1; }
-    .wa-float:hover { transform: scale(1.15) rotate(5deg); box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5); }
-    .wa-float i { animation: float-icon 3s infinite ease-in-out; }
-    @keyframes pulse-glow { 0% { transform: scale(1); opacity: 0.6; } 70% { transform: scale(1.4); opacity: 0; } 100% { transform: scale(1); opacity: 0; } }
-    @keyframes float-icon { 0%, 100% { transform: translateY(0) rotate(0); } 33% { transform: translateY(-3px) rotate(5deg); } 66% { transform: translateY(2px) rotate(-5deg); } }
 
     /* Footer */
     footer { margin-top: 80px; padding: 40px 20px 32px; background: linear-gradient(to top, #f1f5f9 0%, transparent 100%); 
@@ -156,13 +148,11 @@
       .stat::after { right: -16px; height: 30px; }
       .list { grid-template-columns: 1fr; gap: 20px; }
       .item { padding: 20px; }
-      .item-actions { flex-direction: column; width: 100%; }
-      .item-actions .btn { width: 100%; font-size: 0.9rem; padding: 14px 16px; }
+      .item-actions { flex-direction: column; width: 100%; gap: 14px; }
+      .item-actions .btn { width: 100%; font-size: 0.9rem; padding: 15px 16px; }
       .categories { gap: 12px; }
       .cat-chip { padding: 10px 16px; font-size: 0.85rem; }
       .search { padding: 16px 56px 16px 20px; font-size: 1rem; }
-      .wa-float { width: 58px; height: 58px; font-size: 1.7rem; bottom: 20px; right: 20px; }
-      .wa-float::before { inset: -6px; }
       .bar { padding: 16px 20px; flex-direction: column; gap: 12px; text-align: center; }
       .viewer { height: 90vh; }
     }
@@ -182,7 +172,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-      .hero::before, .wa-float::before, .wa-float i, .explore-hint i { animation: none !important; }
+      .hero::before, .explore-hint i { animation: none !important; }
     }
   </style>
 </head>
@@ -235,13 +225,8 @@
     </footer>
   </div>
 
-  <a href="https://wa.me/6282246077307?text=Halo%20Pak%20Ahmad,%20saya%20ingin%20mendapatkan%20perangkat%20ajar%20Kelas%209." 
-     class="wa-float" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
   <div id="toast" class="toast" aria-live="polite">
-    <i class="fas fa-check-circle"></i><span id="toast-message">Tersalin ke clipboard!</span>
+    <i class="fas fa-check-circle"></i><span id="toast-message">Pesan WA siap dikirim!</span>
   </div>
 
   <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
@@ -288,7 +273,7 @@
       {id:24, title:'Template Worksheet', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRywUVh6pEsW3AUEeuYvNzuDtWfJRkY73h8So_KgRM72wa9aUnM2bR8RNtVToOWIFAAh-2QhA1yG526/pub', type:'Google Doc'}
     ];
 
-    // Initialize data
+    // Initialize views
     files.forEach(f => {
       const key = `view:${f.link}`;
       const saved = localStorage.getItem(key);
@@ -296,14 +281,13 @@
       localStorage.setItem(key, f.views);
     });
 
-    // DOM elements
     const elements = {
       list: document.getElementById('list'), empty: document.getElementById('empty'), search: document.getElementById('search'),
       modal: document.getElementById('modal'), frame: document.getElementById('viewer-frame'), modalTitle: document.getElementById('modal-title'),
       modalMeta: document.getElementById('modal-meta'), totalFiles: document.getElementById('total-files'), 
       totalViews: document.getElementById('total-views'), exploreHint: document.getElementById('explore-hint'),
       categories: document.getElementById('categories'), toast: document.getElementById('toast'), 
-      toastMessage: document.getElementById('toast-message')
+      toastMessage: document.getElementById('toast-message'), toastTimeout: null
     };
 
     let currentLink = '';
@@ -311,12 +295,11 @@
     let currentSearch = '';
     let isSearching = false;
 
-    // Initialize - hanya tampilkan 6 file pertama
     elements.totalFiles.textContent = files.length;
     elements.totalViews.textContent = files.reduce((a,b) => a + b.views, 0).toLocaleString();
     renderInitialFiles();
 
-    // Event listeners
+    // Event Listeners
     let searchTimeout;
     elements.search.addEventListener('input', (e) => {
       clearTimeout(searchTimeout);
@@ -333,23 +316,16 @@
       document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       currentCategory = chip.dataset.category;
-      isSearching = true; // Saat filter kategori aktif, anggap sedang searching
+      isSearching = true;
       renderFiles();
     });
 
     document.getElementById('close').addEventListener('click', closeModal);
     document.getElementById('open-new').addEventListener('click', () => window.open(currentLink, '_blank'));
     elements.modal.addEventListener('click', (e) => { if (e.target === elements.modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && elements.modal.classList.contains('open')) closeModal(); });
 
     // Functions
-    function getPdfLink(pubLink) {
-      try {
-        const match = pubLink.match(/2PACX-[-a-zA-Z0-9]+/);
-        if (match) return `https://docs.google.com/document/d/${match[0].replace('2PACX-', '')}/export?format=pdf`;
-        return pubLink.replace('/pub', '/export?format=pdf');
-      } catch (e) { return pubLink; }
-    }
-
     function highlightText(text, query) {
       if (!query) return text;
       const regex = new RegExp(`(${query})`, 'gi');
@@ -357,7 +333,6 @@
     }
 
     function renderInitialFiles() {
-      // Hanya render 6 file pertama untuk homepage
       const initialFiles = files.slice(0, 6);
       renderFileList(initialFiles);
       elements.exploreHint.style.display = 'block';
@@ -365,12 +340,10 @@
 
     function renderFiles() {
       if (!isSearching && currentCategory === 'all') {
-        // Kembali ke tampilan awal (6 file)
         renderInitialFiles();
         return;
       }
 
-      // Saat searching/filter, tampilkan semua file yang sesuai
       const filtered = files.filter(f => {
         const matchesCategory = currentCategory === 'all' || f.folder === currentCategory;
         const matchesSearch = !currentSearch || 
@@ -384,7 +357,6 @@
 
     function renderFileList(fileList) {
       elements.list.innerHTML = '';
-
       if (!fileList.length) {
         elements.empty.style.display = 'block';
         elements.exploreHint.style.display = 'none';
@@ -396,7 +368,6 @@
       fileList.forEach(file => {
         const el = document.createElement('div');
         el.className = 'item';
-        const pdfLink = getPdfLink(file.link);
         const highlightedTitle = highlightText(file.title, currentSearch);
 
         el.innerHTML = `
@@ -410,8 +381,7 @@
           </div>
           <div class="item-actions">
             <button class="btn btn-primary" data-action="preview"><i class="fas fa-eye"></i> Preview</button>
-            <a href="${pdfLink}" download="${file.title}.pdf" class="btn btn-download"><i class="fas fa-download"></i> PDF</a>
-            <button class="btn btn-ghost" data-action="copy"><i class="fas fa-copy"></i> Salin</button>
+            <button class="btn btn-ghost" data-action="wa"><i class="fab fa-whatsapp"></i> Minta via WA</button>
           </div>
         `;
 
@@ -420,16 +390,17 @@
           openPreview(file);
         });
 
-        el.querySelector('[data-action="copy"]').addEventListener('click', (e) => {
+        el.querySelector('[data-action="wa"]').addEventListener('click', (e) => {
           e.stopPropagation();
-          copyToClipboard(file.link, file.title);
+          const message = encodeURIComponent(`Halo Pak Ahmad, saya ingin mendapatkan:\n"${file.title}"\n(Kelas 9 - ${file.folder})`);
+          window.open(`https://wa.me/6282246077307?text=${message}`, '_blank');
+          showToast('Pesan WA siap dikirim!');
         });
 
         el.addEventListener('click', () => openPreview(file));
         elements.list.appendChild(el);
       });
 
-      // Tampilkan hint hanya di homepage (6 file, no search/filter)
       elements.exploreHint.style.display = (!isSearching && currentCategory === 'all' && fileList.length <= 6) ? 'block' : 'none';
     }
 
@@ -452,25 +423,13 @@
       elements.frame.src = 'about:blank';
     }
 
-    async function copyToClipboard(text, fileName) {
-      try {
-        await navigator.clipboard.writeText(text);
-        showToast(`Link "${fileName}" berhasil disalin!`);
-      } catch (err) {
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        showToast(`Link "${fileName}" berhasil disalin!`);
-      }
-    }
-
     function showToast(message) {
       elements.toastMessage.textContent = message;
       elements.toast.classList.add('show');
-      setTimeout(() => elements.toast.classList.remove('show'), 3000);
+      clearTimeout(elements.toastTimeout);
+      elements.toastTimeout = setTimeout(() => {
+        elements.toast.classList.remove('show');
+      }, 2500);
     }
   </script>
 </body>
