@@ -1,267 +1,232 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Perangkat Ajar Kelas 9 | MTsT Daarut Tahfizh Al-Ikhlas</title>
-  <meta name="description" content="Koleksi digital perangkat ajar Bahasa Inggris Kelas 9 — Kurikulum Merdeka 2025/2026. Paperless, terstruktur, siap pakai." />
+  <meta name="description" content="Koleksi digital perangkat ajar Bahasa Inggris Kelas 9 — Kurikulum Merdeka 2025/2026">
+  <meta name="theme-color" content="#ea580c">
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <style>
-    /* ====== Root & Colors ====== */
     :root {
-      --bg: #f9fafb;
-      --card: #ffffff;
-      --text: #1e293b;
-      --text-light: #475569;
-      --accent: #ea580c;
-      --accent-light: #fdba74;
-      --border: #e2e8f0;
+      --bg: #f9fafb; --card: #ffffff; --text: #1e293b; --text-light: #475569;
+      --accent: #ea580c; --accent-light: #fdba74; --accent-dark: #c2410c;
+      --success: #10b981; --success-dark: #059669; --border: #e2e8f0;
       --shadow: 0 10px 30px rgba(30, 41, 59, 0.08);
-      --radius: 18px;
-      --gap: 24px;
+      --shadow-hover: 0 20px 40px rgba(30, 41, 59, 0.15);
+      --radius: 18px; --radius-sm: 12px; --gap: 24px;
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --font-body: 'Inter', sans-serif;
-      --font-title: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif; --font-title: 'Playfair Display', serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      min-height: 100vh;
-      position: relative;
-      padding-bottom: 80px;
-    }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh; padding-bottom: 80px; }
+    .app { max-width: 1200px; margin: 0 auto; padding: 32px 20px; }
 
-    .app { max-width: 1000px; margin: 0 auto; padding: 36px 20px; }
-
-    /* ====== Hero ====== */
+    /* Hero */
     .hero {
-      text-align: center;
-      padding: 48px 32px;
-      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-      color: white;
-      border-radius: var(--radius);
-      margin-bottom: 40px;
-      position: relative;
-      overflow: hidden;
+      text-align: center; padding: 56px 32px; background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      color: white; border-radius: var(--radius); margin-bottom: 48px; position: relative; overflow: hidden;
       box-shadow: var(--shadow);
     }
-
     .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="15" cy="20" r="1.5" fill="%23ffffff18"/><circle cx="75" cy="35" r="2" fill="%23ea580c22"/><circle cx="45" cy="70" r="1.8" fill="%23ffffff12"/></svg>') repeat;
-      opacity: 0.6;
-      animation: float 25s infinite linear;
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(234, 88, 12, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(253, 186, 116, 0.05) 0%, transparent 50%);
+      opacity: 0.6; animation: float 25s infinite linear; z-index: -1;
     }
-
-    @keyframes float { from { transform: translateY(0); } to { transform: translateY(-100px); } }
-
-    .hero h1 { font-family: var(--font-title); font-size: 2.6rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
-    .hero .tagline { font-size: 1.15rem; opacity: 0.95; margin-bottom: 20px; font-weight: 500; }
-    .hero .info { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 0.95rem; opacity: 0.9; }
-    .hero .info div { display: flex; align-items: center; gap: 8px; }
-    .hero .info i { color: var(--accent-light); }
-
-    .stats { display: flex; justify-content: center; gap: 36px; margin-top: 28px; flex-wrap: wrap; }
-    .stat { text-align: center; }
-    .stat strong { display: block; font-size: 1.9rem; font-weight: 700; color: var(--accent-light); }
+    @keyframes float { from { transform: translateY(0) rotate(0deg); } to { transform: translateY(-100px) rotate(1deg); } }
+    .hero h1 { font-family: var(--font-title); font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 12px; }
+    .tagline { font-size: clamp(1.1rem, 2vw, 1.3rem); opacity: 0.95; margin-bottom: 20px; }
+    .info { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 0.95rem; opacity: 0.9; margin-bottom: 8px; }
+    .info div { display: flex; align-items: center; gap: 8px; }
+    .info i { color: var(--accent-light); }
+    .stats { display: flex; justify-content: center; gap: 48px; margin-top: 32px; flex-wrap: wrap; }
+    .stat { text-align: center; position: relative; }
+    .stat::after { content: ''; position: absolute; right: -24px; top: 50%; transform: translateY(-50%); width: 1px; height: 40px; background: rgba(255, 255, 255, 0.2); }
+    .stat:last-child::after { display: none; }
+    .stat strong { display: block; font-size: clamp(1.8rem, 3vw, 2.2rem); font-weight: 700; color: var(--accent-light); margin-bottom: 4px; }
     .stat span { font-size: 0.9rem; opacity: 0.85; }
 
-    /* ====== Search ====== */
-    .search-container { position: relative; max-width: 640px; margin: 0 auto 32px; }
-    .search { width: 100%; padding: 16px 56px 16px 20px; font-size: 1.1rem; border: 2px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: 0 4px 14px rgba(0,0,0,0.06); transition: var(--transition); }
-    .search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15); }
-    .search-icon { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 1.3rem; }
+    /* Search */
+    .search-container { position: relative; max-width: 680px; margin: 0 auto 36px; }
+    .search { width: 100%; padding: 18px 60px 18px 24px; font-size: 1.1rem; border: 2px solid var(--border); 
+              border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); transition: var(--transition); }
+    .search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15), var(--shadow); transform: translateY(-2px); }
+    .search-icon { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 1.3rem; pointer-events: none; }
 
-    /* ====== Kategori ====== */
-    .categories { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
-    .cat-chip { padding: 10px 18px; background: var(--card); border: 1.5px solid var(--border); border-radius: 999px; font-size: 0.9rem; font-weight: 500; color: var(--text-light); display: flex; align-items: center; gap: 8px; transition: var(--transition); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-    .cat-chip i { color: var(--accent); font-size: 0.95rem; }
-    .cat-chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    /* Categories */
+    .categories { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
+    .cat-chip { padding: 12px 20px; background: var(--card); border: 2px solid var(--border); border-radius: 50px; 
+                font-size: 0.9rem; font-weight: 600; color: var(--text-light); display: flex; align-items: center; gap: 8px; 
+                transition: var(--transition); box-shadow: 0 2px 8px rgba(0,0,0,0.04); cursor: pointer; }
+    .cat-chip i { color: var(--accent); }
+    .cat-chip:hover, .cat-chip.active { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(234, 88, 12, 0.15); }
+    .cat-chip.active { background: var(--accent); color: white; border-color: var(--accent); }
+    .cat-chip.active i { color: white; }
 
-    /* ====== List ====== */
-    .list { display: flex; flex-direction: column; gap: var(--gap); }
-    .item { background: var(--card); border-radius: var(--radius); padding: 22px 26px; display: flex; justify-content: space-between; gap: 18px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(30, 41, 59, 0.06); transition: var(--transition); cursor: pointer; }
-    .item:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(30, 41, 59, 0.14); border-color: var(--accent-light); }
-    .item-content { flex: 1; min-width: 0; }
-    .item-title { font-weight: 600; font-size: 1.18rem; color: var(--text); margin-bottom: 8px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .item-meta { display: flex; gap: 18px; font-size: 0.88rem; color: var(--text-light); flex-wrap: wrap; }
-    .item-meta span { display: flex; align-items: center; gap: 6px; }
-    .item-meta i { color: var(--accent); }
+    /* Document List */
+    .list { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }
+    .item { background: var(--card); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 16px; 
+            border: 2px solid transparent; box-shadow: var(--shadow); transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
+    .item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--accent-light)); 
+                    transform: scaleX(0); transition: transform 0.3s ease; }
+    .item:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent-light); }
+    .item:hover::before { transform: scaleX(1); }
+    .item-title { font-weight: 600; font-size: 1.2rem; color: var(--text); margin-bottom: 12px; line-height: 1.4; 
+                  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .item-meta { display: flex; gap: 16px; font-size: 0.88rem; color: var(--text-light); flex-wrap: wrap; }
+    .item-meta span { display: flex; align-items: center; gap: 6px; background: var(--bg); padding: 4px 10px; border-radius: 20px; font-weight: 500; }
+    .item-meta i { color: var(--accent); font-size: 0.8rem; }
     .item-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 
-    .btn { padding: 10px 14px; border-radius: 10px; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 6px; white-space: nowrap; min-width: 80px; justify-content: center; }
-    .btn-primary { background: var(--accent); color: white; border: none; }
-    .btn-primary:hover { background: #dc2626; transform: translateY(-1px); }
-    .btn-ghost { background: transparent; color: var(--text-light); border: 1.5px solid var(--border); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-download { background: #10b981; color: white; border: none; }
-    .btn-download:hover { background: #059669; transform: translateY(-1px); }
+    /* Buttons */
+    .btn { padding: 12px 18px; border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 600; cursor: pointer; 
+           transition: var(--transition); display: flex; align-items: center; gap: 6px; white-space: nowrap; min-width: 100px; 
+           justify-content: center; border: 2px solid transparent; text-decoration: none; }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .btn-primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(234, 88, 12, 0.3); }
+    .btn-ghost { background: transparent; color: var(--text-light); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .btn-download { background: var(--success); color: white; border-color: var(--success); }
+    .btn-download:hover { background: var(--success-dark); border-color: var(--success-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
+    .highlight { background: #fed7aa; color: #c2410c; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
 
-    .highlight { background: #fed7aa; color: #c2410c; padding: 1px 4px; border-radius: 4px; font-weight: 600; }
+    /* Explore Hint */
+    .explore-hint { text-align: center; margin: 48px 0 24px; padding: 24px; color: var(--text-light); font-size: 1.05rem; 
+                    font-weight: 500; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--accent); }
+    .explore-hint i { color: var(--accent); margin-right: 10px; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
-    /* ====== Explore Hint ====== */
-    .explore-hint {
-      text-align: center;
-      margin: 40px 0 20px;
-      padding: 20px;
-      color: var(--text-light);
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    .explore-hint i {
-      color: var(--accent);
-      margin-right: 8px;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
+    /* Empty State */
+    .empty { text-align: center; padding: 80px 20px; color: var(--text-light); background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); display: none; }
+    .empty i { font-size: 4rem; color: #cbd5e1; margin-bottom: 20px; opacity: 0.6; }
+    .empty p { font-size: 1.2rem; max-width: 520px; margin: 0 auto; font-weight: 500; }
 
-    /* ====== Empty ====== */
-    .empty { text-align: center; padding: 90px 20px; color: var(--text-light); }
-    .empty i { font-size: 3.8rem; color: #cbd5e1; margin-bottom: 18px; }
-    .empty p { font-size: 1.15rem; max-width: 520px; margin: 0 auto; }
+    /* Toast */
+    .toast { position: fixed; top: 24px; right: 24px; padding: 16px 20px; background: var(--success); color: white; 
+             border-radius: var(--radius-sm); box-shadow: var(--shadow-hover); transform: translateX(400px); 
+             transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 10000; display: flex; align-items: center; gap: 8px; font-weight: 600; }
+    .toast.show { transform: translateX(0); }
 
-    /* ====== Modal ====== */
-    .modal { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(14px); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 1000; }
-    .modal.open { display: flex; }
-    .viewer { width: 100%; max-width: 1100px; height: 88vh; background: white; border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 30px 70px rgba(0,0,0,0.35); }
-    .bar { padding: 18px 26px; background: #f8fafc; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-    .modal-title { font-weight: 600; font-size: 1.22rem; }
-    .modal-meta { color: var(--text-light); font-size: 0.95rem; }
-    iframe { flex: 1; border: 0; }
+    /* Modal */
+    .modal { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(20px); 
+             display: none; align-items: center; justify-content: center; padding: 20px; z-index: 1000; opacity: 0; transition: opacity 0.3s ease; }
+    .modal.open { display: flex; opacity: 1; }
+    .viewer { width: 100%; max-width: 1200px; height: 85vh; background: white; border-radius: var(--radius); overflow: hidden; 
+              display: flex; flex-direction: column; box-shadow: 0 40px 80px rgba(0,0,0,0.4); transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .modal.open .viewer { transform: scale(1); }
+    .bar { padding: 20px 28px; background: #f8fafc; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .modal-title { font-weight: 600; font-size: 1.25rem; color: var(--text); }
+    .modal-meta { color: var(--text-light); font-size: 0.95rem; margin-top: 4px; }
+    iframe { flex: 1; border: 0; background: white; }
 
-    /* ====== WhatsApp Float — UNIK ====== */
-    .wa-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 62px;
-      height: 62px;
-      background: linear-gradient(135deg, #25d366, #128c7e);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.9rem;
-      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
-      z-index: 999;
-      transition: var(--transition);
-      cursor: pointer;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-    }
-    .wa-float::before {
-      content: '';
-      position: absolute;
-      inset: -8px;
-      border-radius: 50%;
-      background: rgba(37, 211, 102, 0.3);
-      animation: pulse-glow 2s infinite;
-      z-index: -1;
-    }
-    .wa-float:hover {
-      transform: scale(1.12);
-      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
-    }
-    .wa-float i {
-      animation: float-icon 3s infinite ease-in-out;
-    }
-    @keyframes pulse-glow {
-      0% { transform: scale(1); opacity: 0.6; }
-      70% { transform: scale(1.4); opacity: 0; }
-      100% { transform: scale(1); opacity: 0; }
-    }
-    @keyframes float-icon {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
+    /* WhatsApp Float */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; width: 64px; height: 64px; background: linear-gradient(135deg, #25d366, #128c7e); 
+                color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.9rem; 
+                box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition); text-decoration: none; 
+                border: 3px solid rgba(255, 255, 255, 0.3); }
+    .wa-float::before { content: ''; position: absolute; inset: -8px; border-radius: 50%; background: rgba(37, 211, 102, 0.3); 
+                        animation: pulse-glow 2s infinite; z-index: -1; }
+    .wa-float:hover { transform: scale(1.15) rotate(5deg); box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5); }
+    .wa-float i { animation: float-icon 3s infinite ease-in-out; }
+    @keyframes pulse-glow { 0% { transform: scale(1); opacity: 0.6; } 70% { transform: scale(1.4); opacity: 0; } 100% { transform: scale(1); opacity: 0; } }
+    @keyframes float-icon { 0%, 100% { transform: translateY(0) rotate(0); } 33% { transform: translateY(-3px) rotate(5deg); } 66% { transform: translateY(2px) rotate(-5deg); } }
 
-    /* ====== Footer ====== */
-    footer {
-      margin-top: 80px;
-      padding: 36px 20px 28px;
-      background: linear-gradient(to top, #f1f5f9 0%, transparent 100%);
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--text-light);
-      font-size: 0.95rem;
-    }
-    footer .signature { font-weight: 600; color: var(--text); font-size: 1.1rem; margin-bottom: 6px; }
-    footer .role { font-size: 0.98rem; margin-bottom: 4px; }
-    footer .system { margin-top: 20px; font-size: 0.88rem; color: var(--accent); font-weight: 500; letter-spacing: 0.5px; }
+    /* Footer */
+    footer { margin-top: 80px; padding: 40px 20px 32px; background: linear-gradient(to top, #f1f5f9 0%, transparent 100%); 
+             border-top: 1px solid var(--border); text-align: center; color: var(--text-light); font-size: 0.95rem; position: relative; }
+    footer::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 3px; 
+                     background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+    .signature { font-weight: 700; color: var(--text); font-size: 1.15rem; margin-bottom: 8px; }
+    .role { font-size: 1rem; margin-bottom: 6px; font-weight: 500; }
+    .system { margin-top: 24px; font-size: 0.9rem; color: var(--accent); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
 
-    /* ====== Responsive ====== */
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 2.1rem; }
-      .hero .info { gap: 20px; font-size: 0.9rem; }
-      .stats { gap: 24px; }
-      .item { flex-direction: column; }
-      .item-actions { justify-content: flex-start; gap: 8px; }
-      .item-actions .btn { flex: 1; font-size: 0.85rem; padding: 10px 12px; }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .app { padding: 24px 16px; }
+      .hero { padding: 40px 24px; margin-bottom: 40px; }
+      .hero h1 { font-size: 2rem; }
+      .info { gap: 24px; font-size: 0.9rem; }
+      .stats { gap: 32px; }
+      .stat::after { right: -16px; height: 30px; }
+      .list { grid-template-columns: 1fr; gap: 20px; }
+      .item { padding: 20px; }
+      .item-actions { flex-direction: column; width: 100%; }
+      .item-actions .btn { width: 100%; font-size: 0.9rem; padding: 14px 16px; }
       .categories { gap: 12px; }
-      .wa-float { width: 56px; height: 56px; font-size: 1.7rem; bottom: 16px; right: 16px; }
+      .cat-chip { padding: 10px 16px; font-size: 0.85rem; }
+      .search { padding: 16px 56px 16px 20px; font-size: 1rem; }
+      .wa-float { width: 58px; height: 58px; font-size: 1.7rem; bottom: 20px; right: 20px; }
       .wa-float::before { inset: -6px; }
+      .bar { padding: 16px 20px; flex-direction: column; gap: 12px; text-align: center; }
+      .viewer { height: 90vh; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 32px 20px; }
+      .hero h1 { font-size: 1.8rem; }
+      .info { flex-direction: column; gap: 12px; }
+      .stats { gap: 24px; }
+      .stat::after { display: none; }
+      .item-meta { flex-direction: column; gap: 8px; }
+      .explore-hint { margin: 32px 0 20px; padding: 20px; font-size: 1rem; }
+      .empty { padding: 60px 20px; }
+      .empty i { font-size: 3.2rem; }
+      .empty p { font-size: 1.1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .hero::before, .wa-float::before, .wa-float i, .explore-hint i { animation: none !important; }
     }
   </style>
 </head>
 <body>
   <div class="app">
-    <!-- Hero -->
     <header class="hero">
       <h1>Perangkat Ajar Kelas 9</h1>
       <div class="tagline">Bahasa Inggris • Kurikulum Merdeka 2025/2026</div>
       <div class="info">
-        <div>Ahmad Zaman Huri</div>
-        <div>MTsT Daarut Tahfizh Al-Ikhlas</div>
+        <div><i class="fas fa-user"></i> Ahmad Zaman Huri</div>
+        <div><i class="fas fa-school"></i> MTsT Daarut Tahfizh Al-Ikhlas</div>
       </div>
       <div class="stats">
-        <div class="stat"><strong id="total-files">0</strong><span>Dokumen</span></div>
+        <div class="stat"><strong id="total-files">24</strong><span>Dokumen</span></div>
         <div class="stat"><strong id="total-views">0</strong><span>Dilihat</span></div>
         <div class="stat"><strong>5</strong><span>Kategori</span></div>
       </div>
     </header>
 
-    <!-- Search -->
     <div class="search-container">
-      <input type="text" class="search" id="search" placeholder="Cari dokumen, chapter, atau kata kunci..." />
+      <input type="text" class="search" id="search" placeholder="Cari dari 24 dokumen yang tersedia..." autocomplete="off">
       <i class="fas fa-search search-icon"></i>
     </div>
 
-    <!-- Kategori -->
-    <div class="categories">
-      <div class="cat-chip">Asesmen</div>
-      <div class="cat-chip">Dokumen Inti</div>
-      <div class="cat-chip">Materi & Aktivitas</div>
-      <div class="cat-chip">RPP</div>
-      <div class="cat-chip">Template</div>
+    <div class="categories" id="categories">
+      <div class="cat-chip active" data-category="all"><i class="fas fa-layer-group"></i> Semua</div>
+      <div class="cat-chip" data-category="Asesmen"><i class="fas fa-clipboard-check"></i> Asesmen</div>
+      <div class="cat-chip" data-category="Dokumen Inti"><i class="fas fa-file-alt"></i> Dokumen Inti</div>
+      <div class="cat-chip" data-category="Materi & Aktivitas"><i class="fas fa-book-open"></i> Materi & Aktivitas</div>
+      <div class="cat-chip" data-category="RPP"><i class="fas fa-puzzle-piece"></i> RPP</div>
+      <div class="cat-chip" data-category="Template"><i class="fas fa-copy"></i> Template</div>
     </div>
 
-    <!-- List -->
     <main>
       <div id="list" class="list"></div>
-
-      <!-- Explore Hint -->
       <div class="explore-hint" id="explore-hint">
-        <i class="fas fa-search"></i>
-        Cari & temukan berkas yang Anda butuhkan di kolom pencarian di atas…
+        <i class="fas fa-search"></i>Gunakan kolom pencarian untuk menemukan lebih dari 24 dokumen yang tersedia...
       </div>
-
-      <div id="empty" class="empty" style="display:none">
+      <div id="empty" class="empty">
         <i class="fas fa-file-search"></i>
         <p>Tidak ada dokumen yang sesuai dengan pencarian Anda.</p>
       </div>
     </main>
 
-    <!-- Footer -->
     <footer>
       <div class="signature">Dibuat & Dikelola oleh</div>
       <div class="role">Ahmad Zaman Huri — Guru Bahasa Inggris</div>
@@ -270,59 +235,60 @@
     </footer>
   </div>
 
-  <!-- WhatsApp Float — UNIK -->
   <a href="https://wa.me/6282246077307?text=Halo%20Pak%20Ahmad,%20saya%20ingin%20mendapatkan%20perangkat%20ajar%20Kelas%209." 
-     class="wa-float" target="_blank" aria-label="Chat via WhatsApp">
+     class="wa-float" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Modal -->
+  <div id="toast" class="toast" aria-live="polite">
+    <i class="fas fa-check-circle"></i><span id="toast-message">Tersalin ke clipboard!</span>
+  </div>
+
   <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="viewer">
       <div class="bar">
         <div>
           <strong class="modal-title" id="modal-title">Preview</strong>
-          <span class="modal-meta" id="modal-meta"></span>
+          <div class="modal-meta" id="modal-meta"></div>
         </div>
         <div>
-          <button class="btn btn-ghost" id="open-new">Buka</button>
-          <button class="btn btn-ghost" id="close">Tutup</button>
+          <button class="btn btn-ghost" id="open-new"><i class="fas fa-external-link-alt"></i> Buka</button>
+          <button class="btn btn-primary" id="close"><i class="fas fa-times"></i> Tutup</button>
         </div>
       </div>
-      <iframe id="viewer-frame" title="Preview" src="about:blank" loading="lazy"></iframe>
+      <iframe id="viewer-frame" title="Document Preview" src="about:blank" loading="lazy"></iframe>
     </div>
   </div>
 
   <script>
-    // ===== DATA KELAS 9 — DIAMBIL DARI REFERENSI ANDA =====
     const files = [
-      {title:'PAS - Soal & Kunci (PAS Genap)', folder:'Asesmen', link:'https://docs.google.com/document/d/e/2PACX-1vRzu9UH3bpyDmzf7qqT_22cq-ee5FZNu0g7bPrsVTxSPaCFLho_YwDIQ4ucvSS32Vr5xKXZ78xGejfA/pub', type:'Google Doc'},
-      {title:'PTS - Soal PTS Ganjil', folder:'Asesmen', link:'https://docs.google.com/document/d/e/2PACX-1vS0jfaONPxm9eLUe3naPBZZSN3fPZ6fcIBa45GIrHNBxq4Iq9f8_d2618jXqxuvgMBQcyuGIJ7nh89e/pub', type:'Google Doc'},
-      {title:'KI & KD', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vQVCp9Rzc3VmvBIsst1UPOZKjSZmxv6lX1L6hhLoPd12gQqH4Jh4ig8oh_fXcsTLzURQSdVqZZKFFS9/pub', type:'Google Doc'},
-      {title:'Pemetaan Kompetensi per Chapter', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vTTeeNHZ5gzodBKY8Rq8S9j1duogPMZT95W34MJoCJ-q4ri20UpaPnhKYd6srw9LRaBfENMIOqU8r7W/pub', type:'Google Doc'},
-      {title:'Prota', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vTo5tsaarv8izWEvggsN-S16_dg9-mQJQN1wodHQpL8nX-dg7kcUR4SZqrIlA9HppSR8yMXT03VpLnv/pub', type:'Google Doc'},
-      {title:'Promes Ganjil', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vSdNXEZsUMEn8FAPLyOy1J8tMebh0hNu1LtajPC2LDytRR8DblKta5yBjBys5Ywe6BAdXYY2ROMYCrg/pub', type:'Google Doc'},
-      {title:'Promes Genap', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vTW1WHGsFD3UuCCIYFpjbGIKn5iKPAlkbHczk-SG7Ft9mj72d_4FsyUHILi1x_gvYBGf1zxT08Sa2eB/pub', type:'Google Doc'},
-      {title:'TP - Tujuan Pembelajaran per Chapter', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vROy2-NNUwhM-vUkGnvOJU5JZfx8mPp_cgMV7wxbs1o21SlDfZPhKR35FzRf4xGaQZSiqNMHy-SkKAH/pub', type:'Google Doc'},
-      {title:'Personal Plan', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vSXoEerdNVvFPX42JdsyqnoTKLs4PmUP-PrWKoV0EEtM6W1LAk58nYjWo1_woM4sEBLb8TSKLfFStNX/pub', type:'Google Doc'},
-      {title:'Game & Ice Breaking per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vT1r79fSP-VuuXKQd79i9Xz1-ZR6CTjPu2fMQtME5kn_f8lvlPVg1UVWVrok9oYFhJCzKCnH-hwmXMF/pub', type:'Google Doc'},
-      {title:'Grammar Summary per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vR3_ZIjFX4cEpovIzNAIPvK9JQQjFEgJ3zsVIy_o4Ee87ryXcEHMfav1JYOki69H-5AMtPJG3-i_zVL/pub', type:'Google Doc'},
-      {title:'PPT per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vRKbVWCco1c9Lky5EGYfo2Hx4eih9LLacpSmsAC4SwEbTbbujr44uZQT_5ThjsyMdcEsQM40TZo7cDR/pub', type:'Google Doc'},
-      {title:'Vocabulary List per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vQF_XBSqhLfz_86-hnnbC0v2WHYld9qjvMYyUUAOAQN1qqeY6BU88u5-fTlGi3kwG1QMEcD8TvFwahv/pub', type:'Google Doc'},
-      {title:'Worksheet & Task per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vQHNhoZUDt1uoZsyvlFUXLq6iaohc2RATbzyRBj_IG5t8moKnp5BCuv_vPhb296vSzYGFcI2Qriv9YI/pub', type:'Google Doc'},
-      {title:'RPP - Chapter 1', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vTpDtpUYjvWbOIgxJe5irfq_a4IAYaJ--4iCXg6vS2KqoIqxDh-HBSpwoRUPu-2Gi7nvnIUVsY_AYTu/pub', type:'Google Doc'},
-      {title:'RPP - Chapter 2', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vS9m-Xki7l0AjmzPXmfP2M6pke63ADr-Fwd8_wZsAJyCop4Lbg8hjrnYee0hPyOMBENNlA5a3qqZl6Y/pub', type:'Google Doc'},
-      {title:'RPP - Chapter 3', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vQmAB2j7OtwwRf5_rrukgEPHx8h1ZrknGK5XAWiAP7ACKoBdHr20YAf_55WdtD0-wEM22P9gWa1E1cL/pub', type:'Google Doc'},
-      {title:'RPP - Chapter 4', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vSQaM62l9t7M6NLgUZX5aIMYowzfsVVXdBE6S6doOnhawUhi3bkwvzYn2C2j9PGil9E9VXUBuT_zOw4/pub', type:'Google Doc'},
-      {title:'RPP - Chapter 5', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vRf4our6rHjkcqV_m__3KNSGA4xkQ67jvUDKTuzlzkEFojyNUCp_5AAcBo8IjZgu7iFL7D8HXqVVTlZ/pub', type:'Google Doc'},
-      {title:'RPP - Chapter 6', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vQvoBYBiFJ5wQFyQ1fix11uPkAzcg_xAZc8Nhu_xG5lrP3Si0H6QvMcOHRngCjl6ye-uNT9C4Gi1CR9/pub', type:'Google Doc'},
-      {title:'RPP - Chapter 7 (Additional)', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vTtGXS2603T_CGFwNyM5S1tfEXBO_Hr580sus3-GnhOwESnl9KtUF7fK0VgNj4mRt0lQFOVb8jat2O7/pub', type:'Google Doc'},
-      {title:'Template RPP', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRzH2D9mChYFPuj5WAJaXFUh3nc5HqoT2ZWDMky0dEJK-fJnmMhbLRSs7VQDtKRsdaARfp7BKN32GS5/pub', type:'Google Doc'},
-      {title:'Template Rubrik Penilaian', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRjokLn0qmgav4zp_gqLNX19hayrQTaplvUMILUOJzUGrOZU6EOGxSOjJ3MC5npDbGD7Lmvxs1D3CY6/pub', type:'Google Doc'},
-      {title:'Template Worksheet', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRywUVh6pEsW3AUEeuYvNzuDtWfJRkY73h8So_KgRM72wa9aUnM2bR8RNtVToOWIFAAh-2QhA1yG526/pub', type:'Google Doc'}
+      {id:1, title:'PAS - Soal & Kunci (PAS Genap)', folder:'Asesmen', link:'https://docs.google.com/document/d/e/2PACX-1vRzu9UH3bpyDmzf7qqT_22cq-ee5FZNu0g7bPrsVTxSPaCFLho_YwDIQ4ucvSS32Vr5xKXZ78xGejfA/pub', type:'Google Doc'},
+      {id:2, title:'PTS - Soal PTS Ganjil', folder:'Asesmen', link:'https://docs.google.com/document/d/e/2PACX-1vS0jfaONPxm9eLUe3naPBZZSN3fPZ6fcIBa45GIrHNBxq4Iq9f8_d2618jXqxuvgMBQcyuGIJ7nh89e/pub', type:'Google Doc'},
+      {id:3, title:'KI & KD', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vQVCp9Rzc3VmvBIsst1UPOZKjSZmxv6lX1L6hhLoPd12gQqH4Jh4ig8oh_fXcsTLzURQSdVqZZKFFS9/pub', type:'Google Doc'},
+      {id:4, title:'Pemetaan Kompetensi per Chapter', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vTTeeNHZ5gzodBKY8Rq8S9j1duogPMZT95W34MJoCJ-q4ri20UpaPnhKYd6srw9LRaBfENMIOqU8r7W/pub', type:'Google Doc'},
+      {id:5, title:'Prota', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vTo5tsaarv8izWEvggsN-S16_dg9-mQJQN1wodHQpL8nX-dg7kcUR4SZqrIlA9HppSR8yMXT03VpLnv/pub', type:'Google Doc'},
+      {id:6, title:'Promes Ganjil', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vSdNXEZsUMEn8FAPLyOy1J8tMebh0hNu1LtajPC2LDytRR8DblKta5yBjBys5Ywe6BAdXYY2ROMYCrg/pub', type:'Google Doc'},
+      {id:7, title:'Promes Genap', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vTW1WHGsFD3UuCCIYFpjbGIKn5iKPAlkbHczk-SG7Ft9mj72d_4FsyUHILi1x_gvYBGf1zxT08Sa2eB/pub', type:'Google Doc'},
+      {id:8, title:'TP - Tujuan Pembelajaran per Chapter', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vROy2-NNUwhM-vUkGnvOJU5JZfx8mPp_cgMV7wxbs1o21SlDfZPhKR35FzRf4xGaQZSiqNMHy-SkKAH/pub', type:'Google Doc'},
+      {id:9, title:'Personal Plan', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vSXoEerdNVvFPX42JdsyqnoTKLs4PmUP-PrWKoV0EEtM6W1LAk58nYjWo1_woM4sEBLb8TSKLfFStNX/pub', type:'Google Doc'},
+      {id:10, title:'Game & Ice Breaking per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vT1r79fSP-VuuXKQd79i9Xz1-ZR6CTjPu2fMQtME5kn_f8lvlPVg1UVWVrok9oYFhJCzKCnH-hwmXMF/pub', type:'Google Doc'},
+      {id:11, title:'Grammar Summary per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vR3_ZIjFX4cEpovIzNAIPvK9JQQjFEgJ3zsVIy_o4Ee87ryXcEHMfav1JYOki69H-5AMtPJG3-i_zVL/pub', type:'Google Doc'},
+      {id:12, title:'PPT per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vRKbVWCco1c9Lky5EGYfo2Hx4eih9LLacpSmsAC4SwEbTbbujr44uZQT_5ThjsyMdcEsQM40TZo7cDR/pub', type:'Google Doc'},
+      {id:13, title:'Vocabulary List per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vQF_XBSqhLfz_86-hnnbC0v2WHYld9qjvMYyUUAOAQN1qqeY6BU88u5-fTlGi3kwG1QMEcD8TvFwahv/pub', type:'Google Doc'},
+      {id:14, title:'Worksheet & Task per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vQHNhoZUDt1uoZsyvlFUXLq6iaohc2RATbzyRBj_IG5t8moKnp5BCuv_vPhb296vSzYGFcI2Qriv9YI/pub', type:'Google Doc'},
+      {id:15, title:'RPP - Chapter 1', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vTpDtpUYjvWbOIgxJe5irfq_a4IAYaJ--4iCXg6vS2KqoIqxDh-HBSpwoRUPu-2Gi7nvnIUVsY_AYTu/pub', type:'Google Doc'},
+      {id:16, title:'RPP - Chapter 2', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vS9m-Xki7l0AjmzPXmfP2M6pke63ADr-Fwd8_wZsAJyCop4Lbg8hjrnYee0hPyOMBENNlA5a3qqZl6Y/pub', type:'Google Doc'},
+      {id:17, title:'RPP - Chapter 3', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vQmAB2j7OtwwRf5_rrukgEPHx8h1ZrknGK5XAWiAP7ACKoBdHr20YAf_55WdtD0-wEM22P9gWa1E1cL/pub', type:'Google Doc'},
+      {id:18, title:'RPP - Chapter 4', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vSQaM62l9t7M6NLgUZX5aIMYowzfsVVXdBE6S6doOnhawUhi3bkwvzYn2C2j9PGil9E9VXUBuT_zOw4/pub', type:'Google Doc'},
+      {id:19, title:'RPP - Chapter 5', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vRf4our6rHjkcqV_m__3KNSGA4xkQ67jvUDKTuzlzkEFojyNUCp_5AAcBo8IjZgu7iFL7D8HXqVVTlZ/pub', type:'Google Doc'},
+      {id:20, title:'RPP - Chapter 6', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vQvoBYBiFJ5wQFyQ1fix11uPkAzcg_xAZc8Nhu_xG5lrP3Si0H6QvMcOHRngCjl6ye-uNT9C4Gi1CR9/pub', type:'Google Doc'},
+      {id:21, title:'RPP - Chapter 7 (Additional)', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vTtGXS2603T_CGFwNyM5S1tfEXBO_Hr580sus3-GnhOwESnl9KtUF7fK0VgNj4mRt0lQFOVb8jat2O7/pub', type:'Google Doc'},
+      {id:22, title:'Template RPP', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRzH2D9mChYFPuj5WAJaXFUh3nc5HqoT2ZWDMky0dEJK-fJnmMhbLRSs7VQDtKRsdaARfp7BKN32GS5/pub', type:'Google Doc'},
+      {id:23, title:'Template Rubrik Penilaian', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRjokLn0qmgav4zp_gqLNX19hayrQTaplvUMILUOJzUGrOZU6EOGxSOjJ3MC5npDbGD7Lmvxs1D3CY6/pub', type:'Google Doc'},
+      {id:24, title:'Template Worksheet', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRywUVh6pEsW3AUEeuYvNzuDtWfJRkY73h8So_KgRM72wa9aUnM2bR8RNtVToOWIFAAh-2QhA1yG526/pub', type:'Google Doc'}
     ];
 
-    // Views
+    // Initialize data
     files.forEach(f => {
       const key = `view:${f.link}`;
       const saved = localStorage.getItem(key);
@@ -330,139 +296,182 @@
       localStorage.setItem(key, f.views);
     });
 
-    // DOM
-    const listEl = document.getElementById('list');
-    const empty = document.getElementById('empty');
-    const search = document.getElementById('search');
-    const modal = document.getElementById('modal');
-    const frame = document.getElementById('viewer-frame');
-    const modalTitle = document.getElementById('modal-title');
-    const modalMeta = document.getElementById('modal-meta');
-    const totalFiles = document.getElementById('total-files');
-    const totalViews = document.getElementById('total-views');
-    const exploreHint = document.getElementById('explore-hint');
+    // DOM elements
+    const elements = {
+      list: document.getElementById('list'), empty: document.getElementById('empty'), search: document.getElementById('search'),
+      modal: document.getElementById('modal'), frame: document.getElementById('viewer-frame'), modalTitle: document.getElementById('modal-title'),
+      modalMeta: document.getElementById('modal-meta'), totalFiles: document.getElementById('total-files'), 
+      totalViews: document.getElementById('total-views'), exploreHint: document.getElementById('explore-hint'),
+      categories: document.getElementById('categories'), toast: document.getElementById('toast'), 
+      toastMessage: document.getElementById('toast-message')
+    };
 
     let currentLink = '';
+    let currentCategory = 'all';
+    let currentSearch = '';
+    let isSearching = false;
 
-    // Stats
-    totalFiles.textContent = files.length;
-    totalViews.textContent = files.reduce((a,b) => a + b.views, 0).toLocaleString();
+    // Initialize - hanya tampilkan 6 file pertama
+    elements.totalFiles.textContent = files.length;
+    elements.totalViews.textContent = files.reduce((a,b) => a + b.views, 0).toLocaleString();
+    renderInitialFiles();
 
-    // PDF Link
+    // Event listeners
+    let searchTimeout;
+    elements.search.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        currentSearch = e.target.value.trim();
+        isSearching = currentSearch.length > 0;
+        renderFiles();
+      }, 300);
+    });
+
+    elements.categories.addEventListener('click', (e) => {
+      const chip = e.target.closest('.cat-chip');
+      if (!chip) return;
+      document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentCategory = chip.dataset.category;
+      isSearching = true; // Saat filter kategori aktif, anggap sedang searching
+      renderFiles();
+    });
+
+    document.getElementById('close').addEventListener('click', closeModal);
+    document.getElementById('open-new').addEventListener('click', () => window.open(currentLink, '_blank'));
+    elements.modal.addEventListener('click', (e) => { if (e.target === elements.modal) closeModal(); });
+
+    // Functions
     function getPdfLink(pubLink) {
       try {
         const match = pubLink.match(/2PACX-[-a-zA-Z0-9]+/);
-        if (match) {
-          const id = match[0];
-          return `https://docs.google.com/document/d/${id.replace('2PACX-', '')}/export?format=pdf`;
-        }
+        if (match) return `https://docs.google.com/document/d/${match[0].replace('2PACX-', '')}/export?format=pdf`;
         return pubLink.replace('/pub', '/export?format=pdf');
       } catch (e) { return pubLink; }
     }
 
-    // Highlight
     function highlightText(text, query) {
       if (!query) return text;
       const regex = new RegExp(`(${query})`, 'gi');
       return text.replace(regex, '<span class="highlight">$1</span>');
     }
 
-    // Create item
-    function createItem(file) {
-      const el = document.createElement('div');
-      el.className = 'item';
-      const pdfLink = getPdfLink(file.link);
-      el.innerHTML = `
-        <div class="item-content">
-          <div class="item-title">${file.title}</div>
-          <div class="item-meta">
-            <span><i class="fas fa-folder"></i> ${file.folder}</span>
-            <span><i class="fas fa-eye"></i> ${file.views} dilihat</span>
-            <span><i class="fas fa-file-lines"></i> ${file.type}</span>
-          </div>
-        </div>
-        <div class="item-actions">
-          <button class="btn btn-primary" data-action="preview"><i class="fas fa-eye"></i> Preview</button>
-          <a href="${pdfLink}" download class="btn btn-download" title="Download PDF"><i class="fas fa-download"></i> PDF</a>
-          <button class="btn btn-ghost" data-action="copy"><i class="fas fa-copy"></i> Salin</button>
-        </div>
-      `;
-
-      el.querySelectorAll('[data-action]').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          if (btn.dataset.action === 'preview') openPreview(file);
-          if (btn.dataset.action === 'copy') {
-            navigator.clipboard.writeText(file.link).then(() => {
-              btn.innerHTML = '<i class="fas fa-check"></i> Tersalin';
-              setTimeout(() => btn.innerHTML = '<i class="fas fa-copy"></i> Salin', 1500);
-            });
-          }
-        });
-      });
-      return el;
+    function renderInitialFiles() {
+      // Hanya render 6 file pertama untuk homepage
+      const initialFiles = files.slice(0, 6);
+      renderFileList(initialFiles);
+      elements.exploreHint.style.display = 'block';
     }
 
-    function incrementView(file) {
-      file.views++;
-      localStorage.setItem(`view:${file.link}`, file.views);
-      totalViews.textContent = files.reduce((a,b) => a + b.views, 0).toLocaleString();
-    }
-
-    function render(query = '', limit = null) {
-      listEl.innerHTML = '';
-      const filtered = files.filter(f => 
-        f.title.toLowerCase().includes(query.toLowerCase()) ||
-        f.folder.toLowerCase().includes(query.toLowerCase())
-      );
-
-      const toShow = limit ? filtered.slice(0, limit) : filtered;
-
-      if (!toShow.length) {
-        empty.style.display = 'block';
-        exploreHint.style.display = 'none';
+    function renderFiles() {
+      if (!isSearching && currentCategory === 'all') {
+        // Kembali ke tampilan awal (6 file)
+        renderInitialFiles();
         return;
       }
-      empty.style.display = 'none';
 
-      const frag = document.createDocumentFragment();
-      toShow.forEach(f => {
-        const item = createItem(f);
-        if (query) {
-          const titleEl = item.querySelector('.item-title');
-          titleEl.innerHTML = highlightText(f.title, query);
-        }
-        frag.appendChild(item);
+      // Saat searching/filter, tampilkan semua file yang sesuai
+      const filtered = files.filter(f => {
+        const matchesCategory = currentCategory === 'all' || f.folder === currentCategory;
+        const matchesSearch = !currentSearch || 
+          f.title.toLowerCase().includes(currentSearch.toLowerCase()) || 
+          f.folder.toLowerCase().includes(currentSearch.toLowerCase());
+        return matchesCategory && matchesSearch;
       });
-      listEl.appendChild(frag);
 
-      exploreHint.style.display = (query === '' && filtered.length > 5) ? 'block' : 'none';
+      renderFileList(filtered);
     }
 
-    search.addEventListener('input', () => render(search.value.trim()));
+    function renderFileList(fileList) {
+      elements.list.innerHTML = '';
 
-    // Modal
+      if (!fileList.length) {
+        elements.empty.style.display = 'block';
+        elements.exploreHint.style.display = 'none';
+        return;
+      }
+
+      elements.empty.style.display = 'none';
+      
+      fileList.forEach(file => {
+        const el = document.createElement('div');
+        el.className = 'item';
+        const pdfLink = getPdfLink(file.link);
+        const highlightedTitle = highlightText(file.title, currentSearch);
+
+        el.innerHTML = `
+          <div class="item-content">
+            <div class="item-title">${highlightedTitle}</div>
+            <div class="item-meta">
+              <span><i class="fas fa-folder"></i> ${file.folder}</span>
+              <span><i class="fas fa-eye"></i> ${file.views} dilihat</span>
+              <span><i class="fas fa-file-lines"></i> ${file.type}</span>
+            </div>
+          </div>
+          <div class="item-actions">
+            <button class="btn btn-primary" data-action="preview"><i class="fas fa-eye"></i> Preview</button>
+            <a href="${pdfLink}" download="${file.title}.pdf" class="btn btn-download"><i class="fas fa-download"></i> PDF</a>
+            <button class="btn btn-ghost" data-action="copy"><i class="fas fa-copy"></i> Salin</button>
+          </div>
+        `;
+
+        el.querySelector('[data-action="preview"]').addEventListener('click', (e) => {
+          e.stopPropagation();
+          openPreview(file);
+        });
+
+        el.querySelector('[data-action="copy"]').addEventListener('click', (e) => {
+          e.stopPropagation();
+          copyToClipboard(file.link, file.title);
+        });
+
+        el.addEventListener('click', () => openPreview(file));
+        elements.list.appendChild(el);
+      });
+
+      // Tampilkan hint hanya di homepage (6 file, no search/filter)
+      elements.exploreHint.style.display = (!isSearching && currentCategory === 'all' && fileList.length <= 6) ? 'block' : 'none';
+    }
+
     function openPreview(file) {
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
-      modalTitle.textContent = file.title;
-      modalMeta.textContent = `${file.folder} • ${file.type}`;
+      elements.modal.classList.add('open');
+      elements.modal.setAttribute('aria-hidden', 'false');
+      elements.modalTitle.textContent = file.title;
+      elements.modalMeta.textContent = `${file.folder} • ${file.type}`;
       currentLink = file.link;
-      frame.src = file.link;
-      incrementView(file);
+      elements.frame.src = file.link;
+      
+      file.views++;
+      localStorage.setItem(`view:${file.link}`, file.views);
+      elements.totalViews.textContent = files.reduce((a,b) => a + b.views, 0).toLocaleString();
     }
 
-    document.getElementById('close').onclick = closeModal;
-    document.getElementById('open-new').onclick = () => window.open(currentLink, '_blank');
-    modal.onclick = (e) => { if (e.target === modal) closeModal(); };
     function closeModal() {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-      frame.src = 'about:blank';
+      elements.modal.classList.remove('open');
+      elements.modal.setAttribute('aria-hidden', 'true');
+      elements.frame.src = 'about:blank';
     }
 
-    // Init: Hanya 5 file pertama
-    render('', 5);
+    async function copyToClipboard(text, fileName) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast(`Link "${fileName}" berhasil disalin!`);
+      } catch (err) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showToast(`Link "${fileName}" berhasil disalin!`);
+      }
+    }
+
+    function showToast(message) {
+      elements.toastMessage.textContent = message;
+      elements.toast.classList.add('show');
+      setTimeout(() => elements.toast.classList.remove('show'), 3000);
+    }
   </script>
 </body>
 </html>
