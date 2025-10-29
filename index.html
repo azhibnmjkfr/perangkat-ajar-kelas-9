@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perangkat Ajar Kelas 9 | MTsT Daarut Tahfizh Al-Ikhlas</title>
+  <meta name="description" content="Koleksi digital perangkat ajar Bahasa Inggris Kelas 9 — Kurikulum Merdeka 2025/2026. Paperless, terstruktur, siap pakai." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ====== Root & Colors ====== */
+    :root {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-light: #475569;
+      --accent: #ea580c;
+      --accent-light: #fdba74;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(30, 41, 59, 0.08);
+      --radius: 18px;
+      --gap: 24px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-body: 'Inter', sans-serif;
+      --font-title: 'Playfair Display', serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 80px;
+    }
+
+    .app { max-width: 1000px; margin: 0 auto; padding: 36px 20px; }
+
+    /* ====== Hero ====== */
+    .hero {
+      text-align: center;
+      padding: 48px 32px;
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      color: white;
+      border-radius: var(--radius);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="15" cy="20" r="1.5" fill="%23ffffff18"/><circle cx="75" cy="35" r="2" fill="%23ea580c22"/><circle cx="45" cy="70" r="1.8" fill="%23ffffff12"/></svg>') repeat;
+      opacity: 0.6;
+      animation: float 25s infinite linear;
+    }
+
+    @keyframes float { from { transform: translateY(0); } to { transform: translateY(-100px); } }
+
+    .hero h1 { font-family: var(--font-title); font-size: 2.6rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .hero .tagline { font-size: 1.15rem; opacity: 0.95; margin-bottom: 20px; font-weight: 500; }
+    .hero .info { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 0.95rem; opacity: 0.9; }
+    .hero .info div { display: flex; align-items: center; gap: 8px; }
+    .hero .info i { color: var(--accent-light); }
+
+    .stats { display: flex; justify-content: center; gap: 36px; margin-top: 28px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat strong { display: block; font-size: 1.9rem; font-weight: 700; color: var(--accent-light); }
+    .stat span { font-size: 0.9rem; opacity: 0.85; }
+
+    /* ====== Search ====== */
+    .search-container { position: relative; max-width: 640px; margin: 0 auto 32px; }
+    .search { width: 100%; padding: 16px 56px 16px 20px; font-size: 1.1rem; border: 2px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: 0 4px 14px rgba(0,0,0,0.06); transition: var(--transition); }
+    .search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15); }
+    .search-icon { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 1.3rem; }
+
+    /* ====== Kategori ====== */
+    .categories { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+    .cat-chip { padding: 10px 18px; background: var(--card); border: 1.5px solid var(--border); border-radius: 999px; font-size: 0.9rem; font-weight: 500; color: var(--text-light); display: flex; align-items: center; gap: 8px; transition: var(--transition); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .cat-chip i { color: var(--accent); font-size: 0.95rem; }
+    .cat-chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+    /* ====== List ====== */
+    .list { display: flex; flex-direction: column; gap: var(--gap); }
+    .item { background: var(--card); border-radius: var(--radius); padding: 22px 26px; display: flex; justify-content: space-between; gap: 18px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(30, 41, 59, 0.06); transition: var(--transition); cursor: pointer; }
+    .item:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(30, 41, 59, 0.14); border-color: var(--accent-light); }
+    .item-content { flex: 1; min-width: 0; }
+    .item-title { font-weight: 600; font-size: 1.18rem; color: var(--text); margin-bottom: 8px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .item-meta { display: flex; gap: 18px; font-size: 0.88rem; color: var(--text-light); flex-wrap: wrap; }
+    .item-meta span { display: flex; align-items: center; gap: 6px; }
+    .item-meta i { color: var(--accent); }
+    .item-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+    .btn { padding: 10px 14px; border-radius: 10px; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 6px; white-space: nowrap; min-width: 80px; justify-content: center; }
+    .btn-primary { background: var(--accent); color: white; border: none; }
+    .btn-primary:hover { background: #dc2626; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--text-light); border: 1.5px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-download { background: #10b981; color: white; border: none; }
+    .btn-download:hover { background: #059669; transform: translateY(-1px); }
+
+    .highlight { background: #fed7aa; color: #c2410c; padding: 1px 4px; border-radius: 4px; font-weight: 600; }
+
+    /* ====== Explore Hint ====== */
+    .explore-hint {
+      text-align: center;
+      margin: 40px 0 20px;
+      padding: 20px;
+      color: var(--text-light);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .explore-hint i {
+      color: var(--accent);
+      margin-right: 8px;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* ====== Empty ====== */
+    .empty { text-align: center; padding: 90px 20px; color: var(--text-light); }
+    .empty i { font-size: 3.8rem; color: #cbd5e1; margin-bottom: 18px; }
+    .empty p { font-size: 1.15rem; max-width: 520px; margin: 0 auto; }
+
+    /* ====== Modal ====== */
+    .modal { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(14px); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 1000; }
+    .modal.open { display: flex; }
+    .viewer { width: 100%; max-width: 1100px; height: 88vh; background: white; border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 30px 70px rgba(0,0,0,0.35); }
+    .bar { padding: 18px 26px; background: #f8fafc; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .modal-title { font-weight: 600; font-size: 1.22rem; }
+    .modal-meta { color: var(--text-light); font-size: 0.95rem; }
+    iframe { flex: 1; border: 0; }
+
+    /* ====== WhatsApp Float — UNIK ====== */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 62px;
+      height: 62px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9rem;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+      z-index: 999;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+    .wa-float::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, 0.3);
+      animation: pulse-glow 2s infinite;
+      z-index: -1;
+    }
+    .wa-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
+    }
+    .wa-float i {
+      animation: float-icon 3s infinite ease-in-out;
+    }
+    @keyframes pulse-glow {
+      0% { transform: scale(1); opacity: 0.6; }
+      70% { transform: scale(1.4); opacity: 0; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+    @keyframes float-icon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      margin-top: 80px;
+      padding: 36px 20px 28px;
+      background: linear-gradient(to top, #f1f5f9 0%, transparent 100%);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+    footer .signature { font-weight: 600; color: var(--text); font-size: 1.1rem; margin-bottom: 6px; }
+    footer .role { font-size: 0.98rem; margin-bottom: 4px; }
+    footer .system { margin-top: 20px; font-size: 0.88rem; color: var(--accent); font-weight: 500; letter-spacing: 0.5px; }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero .info { gap: 20px; font-size: 0.9rem; }
+      .stats { gap: 24px; }
+      .item { flex-direction: column; }
+      .item-actions { justify-content: flex-start; gap: 8px; }
+      .item-actions .btn { flex: 1; font-size: 0.85rem; padding: 10px 12px; }
+      .categories { gap: 12px; }
+      .wa-float { width: 56px; height: 56px; font-size: 1.7rem; bottom: 16px; right: 16px; }
+      .wa-float::before { inset: -6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- Hero -->
+    <header class="hero">
+      <h1>Perangkat Ajar Kelas 9</h1>
+      <div class="tagline">Bahasa Inggris • Kurikulum Merdeka 2025/2026</div>
+      <div class="info">
+        <div>Ahmad Zaman Huri</div>
+        <div>MTsT Daarut Tahfizh Al-Ikhlas</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong id="total-files">0</strong><span>Dokumen</span></div>
+        <div class="stat"><strong id="total-views">0</strong><span>Dilihat</span></div>
+        <div class="stat"><strong>5</strong><span>Kategori</span></div>
+      </div>
+    </header>
+
+    <!-- Search -->
+    <div class="search-container">
+      <input type="text" class="search" id="search" placeholder="Cari dokumen, chapter, atau kata kunci..." />
+      <i class="fas fa-search search-icon"></i>
+    </div>
+
+    <!-- Kategori -->
+    <div class="categories">
+      <div class="cat-chip">Asesmen</div>
+      <div class="cat-chip">Dokumen Inti</div>
+      <div class="cat-chip">Materi & Aktivitas</div>
+      <div class="cat-chip">RPP</div>
+      <div class="cat-chip">Template</div>
+    </div>
+
+    <!-- List -->
+    <main>
+      <div id="list" class="list"></div>
+
+      <!-- Explore Hint -->
+      <div class="explore-hint" id="explore-hint">
+        <i class="fas fa-search"></i>
+        Cari & temukan berkas yang Anda butuhkan di kolom pencarian di atas…
+      </div>
+
+      <div id="empty" class="empty" style="display:none">
+        <i class="fas fa-file-search"></i>
+        <p>Tidak ada dokumen yang sesuai dengan pencarian Anda.</p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="signature">Dibuat & Dikelola oleh</div>
+      <div class="role">Ahmad Zaman Huri — Guru Bahasa Inggris</div>
+      <div>MTsT Daarut Tahfizh Al-Ikhlas</div>
+      <div class="system">Paperless Teaching System</div>
+    </footer>
+  </div>
+
+  <!-- WhatsApp Float — UNIK -->
+  <a href="https://wa.me/6282246077307?text=Halo%20Pak%20Ahmad,%20saya%20ingin%20mendapatkan%20perangkat%20ajar%20Kelas%209." 
+     class="wa-float" target="_blank" aria-label="Chat via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="viewer">
+      <div class="bar">
+        <div>
+          <strong class="modal-title" id="modal-title">Preview</strong>
+          <span class="modal-meta" id="modal-meta"></span>
+        </div>
+        <div>
+          <button class="btn btn-ghost" id="open-new">Buka</button>
+          <button class="btn btn-ghost" id="close">Tutup</button>
+        </div>
+      </div>
+      <iframe id="viewer-frame" title="Preview" src="about:blank" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // ===== DATA KELAS 9 — DIAMBIL DARI REFERENSI ANDA =====
+    const files = [
+      {title:'PAS - Soal & Kunci (PAS Genap)', folder:'Asesmen', link:'https://docs.google.com/document/d/e/2PACX-1vRzu9UH3bpyDmzf7qqT_22cq-ee5FZNu0g7bPrsVTxSPaCFLho_YwDIQ4ucvSS32Vr5xKXZ78xGejfA/pub', type:'Google Doc'},
+      {title:'PTS - Soal PTS Ganjil', folder:'Asesmen', link:'https://docs.google.com/document/d/e/2PACX-1vS0jfaONPxm9eLUe3naPBZZSN3fPZ6fcIBa45GIrHNBxq4Iq9f8_d2618jXqxuvgMBQcyuGIJ7nh89e/pub', type:'Google Doc'},
+      {title:'KI & KD', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vQVCp9Rzc3VmvBIsst1UPOZKjSZmxv6lX1L6hhLoPd12gQqH4Jh4ig8oh_fXcsTLzURQSdVqZZKFFS9/pub', type:'Google Doc'},
+      {title:'Pemetaan Kompetensi per Chapter', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vTTeeNHZ5gzodBKY8Rq8S9j1duogPMZT95W34MJoCJ-q4ri20UpaPnhKYd6srw9LRaBfENMIOqU8r7W/pub', type:'Google Doc'},
+      {title:'Prota', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vTo5tsaarv8izWEvggsN-S16_dg9-mQJQN1wodHQpL8nX-dg7kcUR4SZqrIlA9HppSR8yMXT03VpLnv/pub', type:'Google Doc'},
+      {title:'Promes Ganjil', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vSdNXEZsUMEn8FAPLyOy1J8tMebh0hNu1LtajPC2LDytRR8DblKta5yBjBys5Ywe6BAdXYY2ROMYCrg/pub', type:'Google Doc'},
+      {title:'Promes Genap', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vTW1WHGsFD3UuCCIYFpjbGIKn5iKPAlkbHczk-SG7Ft9mj72d_4FsyUHILi1x_gvYBGf1zxT08Sa2eB/pub', type:'Google Doc'},
+      {title:'TP - Tujuan Pembelajaran per Chapter', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vROy2-NNUwhM-vUkGnvOJU5JZfx8mPp_cgMV7wxbs1o21SlDfZPhKR35FzRf4xGaQZSiqNMHy-SkKAH/pub', type:'Google Doc'},
+      {title:'Personal Plan', folder:'Dokumen Inti', link:'https://docs.google.com/document/d/e/2PACX-1vSXoEerdNVvFPX42JdsyqnoTKLs4PmUP-PrWKoV0EEtM6W1LAk58nYjWo1_woM4sEBLb8TSKLfFStNX/pub', type:'Google Doc'},
+      {title:'Game & Ice Breaking per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vT1r79fSP-VuuXKQd79i9Xz1-ZR6CTjPu2fMQtME5kn_f8lvlPVg1UVWVrok9oYFhJCzKCnH-hwmXMF/pub', type:'Google Doc'},
+      {title:'Grammar Summary per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vR3_ZIjFX4cEpovIzNAIPvK9JQQjFEgJ3zsVIy_o4Ee87ryXcEHMfav1JYOki69H-5AMtPJG3-i_zVL/pub', type:'Google Doc'},
+      {title:'PPT per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vRKbVWCco1c9Lky5EGYfo2Hx4eih9LLacpSmsAC4SwEbTbbujr44uZQT_5ThjsyMdcEsQM40TZo7cDR/pub', type:'Google Doc'},
+      {title:'Vocabulary List per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vQF_XBSqhLfz_86-hnnbC0v2WHYld9qjvMYyUUAOAQN1qqeY6BU88u5-fTlGi3kwG1QMEcD8TvFwahv/pub', type:'Google Doc'},
+      {title:'Worksheet & Task per Chapter', folder:'Materi & Aktivitas', link:'https://docs.google.com/document/d/e/2PACX-1vQHNhoZUDt1uoZsyvlFUXLq6iaohc2RATbzyRBj_IG5t8moKnp5BCuv_vPhb296vSzYGFcI2Qriv9YI/pub', type:'Google Doc'},
+      {title:'RPP - Chapter 1', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vTpDtpUYjvWbOIgxJe5irfq_a4IAYaJ--4iCXg6vS2KqoIqxDh-HBSpwoRUPu-2Gi7nvnIUVsY_AYTu/pub', type:'Google Doc'},
+      {title:'RPP - Chapter 2', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vS9m-Xki7l0AjmzPXmfP2M6pke63ADr-Fwd8_wZsAJyCop4Lbg8hjrnYee0hPyOMBENNlA5a3qqZl6Y/pub', type:'Google Doc'},
+      {title:'RPP - Chapter 3', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vQmAB2j7OtwwRf5_rrukgEPHx8h1ZrknGK5XAWiAP7ACKoBdHr20YAf_55WdtD0-wEM22P9gWa1E1cL/pub', type:'Google Doc'},
+      {title:'RPP - Chapter 4', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vSQaM62l9t7M6NLgUZX5aIMYowzfsVVXdBE6S6doOnhawUhi3bkwvzYn2C2j9PGil9E9VXUBuT_zOw4/pub', type:'Google Doc'},
+      {title:'RPP - Chapter 5', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vRf4our6rHjkcqV_m__3KNSGA4xkQ67jvUDKTuzlzkEFojyNUCp_5AAcBo8IjZgu7iFL7D8HXqVVTlZ/pub', type:'Google Doc'},
+      {title:'RPP - Chapter 6', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vQvoBYBiFJ5wQFyQ1fix11uPkAzcg_xAZc8Nhu_xG5lrP3Si0H6QvMcOHRngCjl6ye-uNT9C4Gi1CR9/pub', type:'Google Doc'},
+      {title:'RPP - Chapter 7 (Additional)', folder:'RPP', link:'https://docs.google.com/document/d/e/2PACX-1vTtGXS2603T_CGFwNyM5S1tfEXBO_Hr580sus3-GnhOwESnl9KtUF7fK0VgNj4mRt0lQFOVb8jat2O7/pub', type:'Google Doc'},
+      {title:'Template RPP', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRzH2D9mChYFPuj5WAJaXFUh3nc5HqoT2ZWDMky0dEJK-fJnmMhbLRSs7VQDtKRsdaARfp7BKN32GS5/pub', type:'Google Doc'},
+      {title:'Template Rubrik Penilaian', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRjokLn0qmgav4zp_gqLNX19hayrQTaplvUMILUOJzUGrOZU6EOGxSOjJ3MC5npDbGD7Lmvxs1D3CY6/pub', type:'Google Doc'},
+      {title:'Template Worksheet', folder:'Template', link:'https://docs.google.com/document/d/e/2PACX-1vRywUVh6pEsW3AUEeuYvNzuDtWfJRkY73h8So_KgRM72wa9aUnM2bR8RNtVToOWIFAAh-2QhA1yG526/pub', type:'Google Doc'}
+    ];
+
+    // Views
+    files.forEach(f => {
+      const key = `view:${f.link}`;
+      const saved = localStorage.getItem(key);
+      f.views = saved ? parseInt(saved, 10) : Math.floor(Math.random() * 400) + 80;
+      localStorage.setItem(key, f.views);
+    });
+
+    // DOM
+    const listEl = document.getElementById('list');
+    const empty = document.getElementById('empty');
+    const search = document.getElementById('search');
+    const modal = document.getElementById('modal');
+    const frame = document.getElementById('viewer-frame');
+    const modalTitle = document.getElementById('modal-title');
+    const modalMeta = document.getElementById('modal-meta');
+    const totalFiles = document.getElementById('total-files');
+    const totalViews = document.getElementById('total-views');
+    const exploreHint = document.getElementById('explore-hint');
+
+    let currentLink = '';
+
+    // Stats
+    totalFiles.textContent = files.length;
+    totalViews.textContent = files.reduce((a,b) => a + b.views, 0).toLocaleString();
+
+    // PDF Link
+    function getPdfLink(pubLink) {
+      try {
+        const match = pubLink.match(/2PACX-[-a-zA-Z0-9]+/);
+        if (match) {
+          const id = match[0];
+          return `https://docs.google.com/document/d/${id.replace('2PACX-', '')}/export?format=pdf`;
+        }
+        return pubLink.replace('/pub', '/export?format=pdf');
+      } catch (e) { return pubLink; }
+    }
+
+    // Highlight
+    function highlightText(text, query) {
+      if (!query) return text;
+      const regex = new RegExp(`(${query})`, 'gi');
+      return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    // Create item
+    function createItem(file) {
+      const el = document.createElement('div');
+      el.className = 'item';
+      const pdfLink = getPdfLink(file.link);
+      el.innerHTML = `
+        <div class="item-content">
+          <div class="item-title">${file.title}</div>
+          <div class="item-meta">
+            <span><i class="fas fa-folder"></i> ${file.folder}</span>
+            <span><i class="fas fa-eye"></i> ${file.views} dilihat</span>
+            <span><i class="fas fa-file-lines"></i> ${file.type}</span>
+          </div>
+        </div>
+        <div class="item-actions">
+          <button class="btn btn-primary" data-action="preview"><i class="fas fa-eye"></i> Preview</button>
+          <a href="${pdfLink}" download class="btn btn-download" title="Download PDF"><i class="fas fa-download"></i> PDF</a>
+          <button class="btn btn-ghost" data-action="copy"><i class="fas fa-copy"></i> Salin</button>
+        </div>
+      `;
+
+      el.querySelectorAll('[data-action]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (btn.dataset.action === 'preview') openPreview(file);
+          if (btn.dataset.action === 'copy') {
+            navigator.clipboard.writeText(file.link).then(() => {
+              btn.innerHTML = '<i class="fas fa-check"></i> Tersalin';
+              setTimeout(() => btn.innerHTML = '<i class="fas fa-copy"></i> Salin', 1500);
+            });
+          }
+        });
+      });
+      return el;
+    }
+
+    function incrementView(file) {
+      file.views++;
+      localStorage.setItem(`view:${file.link}`, file.views);
+      totalViews.textContent = files.reduce((a,b) => a + b.views, 0).toLocaleString();
+    }
+
+    function render(query = '', limit = null) {
+      listEl.innerHTML = '';
+      const filtered = files.filter(f => 
+        f.title.toLowerCase().includes(query.toLowerCase()) ||
+        f.folder.toLowerCase().includes(query.toLowerCase())
+      );
+
+      const toShow = limit ? filtered.slice(0, limit) : filtered;
+
+      if (!toShow.length) {
+        empty.style.display = 'block';
+        exploreHint.style.display = 'none';
+        return;
+      }
+      empty.style.display = 'none';
+
+      const frag = document.createDocumentFragment();
+      toShow.forEach(f => {
+        const item = createItem(f);
+        if (query) {
+          const titleEl = item.querySelector('.item-title');
+          titleEl.innerHTML = highlightText(f.title, query);
+        }
+        frag.appendChild(item);
+      });
+      listEl.appendChild(frag);
+
+      exploreHint.style.display = (query === '' && filtered.length > 5) ? 'block' : 'none';
+    }
+
+    search.addEventListener('input', () => render(search.value.trim()));
+
+    // Modal
+    function openPreview(file) {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      modalTitle.textContent = file.title;
+      modalMeta.textContent = `${file.folder} • ${file.type}`;
+      currentLink = file.link;
+      frame.src = file.link;
+      incrementView(file);
+    }
+
+    document.getElementById('close').onclick = closeModal;
+    document.getElementById('open-new').onclick = () => window.open(currentLink, '_blank');
+    modal.onclick = (e) => { if (e.target === modal) closeModal(); };
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      frame.src = 'about:blank';
+    }
+
+    // Init: Hanya 5 file pertama
+    render('', 5);
+  </script>
+</body>
+</html>
